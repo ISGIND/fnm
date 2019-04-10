@@ -1,0 +1,33 @@
+//------------------------------------------------------------------------------------//
+//set the answers that were picked to show on Q2,
+//NOT including the Other Specify answers:
+//------------------------------------------------------------------------------------//
+
+SetAnswerVisible(CurrQues,false); //hide all answers
+for (var i=1; i<GetAnswerCount(QRef(1)); i++)
+{ //this loop goes through all possible answers
+ 	if(ContainsAnyIter(QRef(1),i)) 
+	{
+ 		SetAnswerVisible(CurrQues,true,false,i); //show the answers that were picked
+ 	} 
+}
+
+
+//------------------------------------------------------------------------------------//
+//variable i does not reach the last index, since the last index (in this case index 3)
+//is the index of Other Specify which we will check seperately:
+//------------------------------------------------------------------------------------//
+
+for (i=1; i<=4; i++)// 4 is the maximum number of possible iterations, adjust if needed
+{
+ //for each iterarion, let's check if Other Specify has been answered
+	if (ContainsIter(QRef(1),3, i)) //3 is the index of Other Specify in Q1. adjust if needed
+ 		{
+ 		  var indxOfAnswerToShow= GetAnswerCount(QRef(1))+i-1;
+		  // e.x. if captured in 1st iteration, the indexOfAnswerToShow is 3-1+1=3
+		  // therefore, it will show "Other Specify from Iter1" and so on..
+		  SetAnswerVisible(CurrQues,true,false,indxOfAnswerToShow);
+		  SetAnswerText(CurrQues,indxOfAnswerToShow,AdditionalAnswerTextIter(QRef(1),3,i)); 
+		}
+}
+
