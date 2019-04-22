@@ -1,46 +1,90 @@
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
-<meta name="description" content="Fundacion para apoyar el deporte, principalmente boxeo para evitar las adicciones">
-<meta name="keywords" content="Naxhi, naxhí, makaua, fundacion, boxeo, adicciones, lucha, ">
-<meta name="author" content="Freedom Industries Development">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fundacion Naxhí Makaua</title>
 <link rel="icon" href="../../../../favicon.ico">
+<meta name="Fundación Naxhí Makua" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="wfnm3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-<link rel="stylesheet" href="fnm.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+img.background{
+	-webkit-filter: blur(6px); /* Safari */
+  filter: blur(6px);
+}
+</style>
 <body>
-<!------Overlay and pop up------>
-<div class="overlay" id="overlay">
-			<div class="popup" id="popup">
-				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-close"></i></a>
-				<h3>Un éxito Barrio de Campeones!</h3>
-				<h4>Gracias por su participación. 
-                <br> Ayudanos a ponerle un gancho a las adicciones
-                <br> <a href="#dona" id="hud"> Haz una donación </a></h4>
-				<img src="images/exito.jpg" class="w3-round w3-margin-bottom" alt="Fundacion Naxhi Makaua" style="width:100%">
-			</div>
-</div>
-
 
 <!-- Sidebar -->
-    <div class="sidebar w3-sidebar w3-bar-block w3-white w3-card" id = "leftNav">
+    <div class="sidebar w3-sidebar w3-bar-block w3-white w3-card">
       <h5 class="w3-bar-item">Fundación Naxhí Makaua</h5>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large" onClick="responsiveNav()">INICIO</a>
-      <a href="#nosotros" class="w3-bar-item w3-button w3-padding-large" onClick="responsiveNav()">NOSOTROS</a>
-      <a href="#eventos" class="w3-bar-item w3-button w3-padding-large" onClick="responsiveNav()">EVENTOS</a>
-      <a href="#dona" class="w3-bar-item w3-button w3-padding-large" onClick="responsiveNav()">DONATIVOS</a>
-      <a href="#contacto" class="w3-bar-item w3-button w3-padding-large" onClick="responsiveNav()">CONTACTO</a>
-      <a href="javascript:void(0);" class="icon" id="icon"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INICIO</a>
+      <a href="#nosotros" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NOSOTROS</a>
+      <a href="#eventos" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EVENTOS</a>
+      <a href="#dona" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DONATIVOS</a>
+      <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
     </div>
 
 <!-- Page Content -->
 <div class="content">
 	<!--Sección Imagen de Inicio-->
 	<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:600px" id="#">
-    	<img src="donativo.jpg" class="w3-round w3-margin-bottom" alt="Fundacion Naxhi Makaua" style="width:100%">
+    	<img src="donativo.jpg" class="w3-round w3-margin-bottom" alt="Buscando" style="width:100%">
     </div>
 
 	<!--Sección Nosotros somos-->
@@ -50,7 +94,7 @@
         <p class="w3-justify">Se busca apoyar con el fin de fomentar el deporte. Somos una fundación comprometida con el pueblo mexicano, que fomenta el deporte y apoya a las familias mexicanas de escasos recursos. Se busca erradicar el hambre que viven actualmente millones de mexicanos, de esta forma ayudaremos a mejorar la calidad de vida tanto de hambre como de enfermedades que en los últimos años han incrementado en nuestro país y es una tasa importante de mortalidad.
         </p>
         <div class="w3-row w3-padding-32">
-          <div class="w3-third">        
+          <div class="w3-third">
             <img src="images/copametas.png" class="w3-round w3-margin-bottom" alt="Torneos" style="width:40%">
             <h4>Torneos</h4>
             <p>Se busca fomentar el deporte, promoviendo los valores y el trabajo en equipo.
@@ -70,7 +114,7 @@
     </div>
 	<br/>
     <!--Sección Eventos-->
-   	
+
     <div class="w3-container w3-content w3-center w3-padding-64" id="eventos" style="max-width:800px;position: relative;
   text-align:center;color: white;">
     	<img src="donativo.png" class="background w3-round w3-margin-bottom" alt="Buscando" style="width:100%">
@@ -90,30 +134,30 @@
           <img src="images/donativo.png" style="width:80%">
           <p>APOYANOS</p>
         </div>
-    
+
         <div class="w3-twothird">
           <h1>HAZ UNA DONACIÓN</h1>
           <h5 class="w3-padding-32 w3-text-grey" >La Fundación Naxhí Makaua ayuda a mujeres, niños, personas de la tercera edad de bajos recursos o en situación de calle.  Tu donación es muy importante para poder seguir apoyando a quienes mas lo necesitan. Puedes donar en cualquier sucursal de Bancomer: <br/>
           <ul>
             <li>CUENTA: 00107413661</li><li>CLABE INTERBANCARIA: 012180001074136613</li></ul>
-          
-            
+
+
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="723YZWT8F7Q4G">
     <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
     <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
     </form>
-    
+
         </div>
       </div>
     </div>
-    
-    
+
+
     <!-- Sección de contacto -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contacto">
       <h2 class="w3-wide w3-center">CONTACTO</h2>
-      
+
       <div class="w3-row w3-padding-32" style="font-family:Arial, Helvetica, sans-serif">
         <div class="w3-col m8 w3-large w3-margin-bottom">
           <i class="fa fa-map-marker" style="width:30px"></i> Calzada de Guadalupe, Ext 736 Int 8
@@ -125,14 +169,13 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px">
     	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.3641114621296!2d-99.1203296850925!3d19.48296448685576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f99e75a2fe27%3A0xaa50bf97b59b203b!2sCalz+de+Guadalupe+736%2C+Villa+Gustavo+A.+Madero%2C+07050+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1550183965099" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
-    
-    
-    
+
+
     <!-- Sección Footer/redes -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
     	<a> Buscanos en:&nbsp;&nbsp;&nbsp;</a>
@@ -140,10 +183,8 @@
         <i class="fa fa-instagram w3-hover-opacity"></i>
         <i class="fa fa-twitter w3-hover-opacity"></i>
     </footer>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="fnm.js"></script>
-  
-</div>      
+
+</div>
 </body>
 </html>
+<!-- Iván Sánchez González -->
